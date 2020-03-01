@@ -1,22 +1,17 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: black;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
 .white {
   text-decoration: none;
   color: white;
   padding: 5px 0;
-  transition: 0.2s;
+  margin-left: 20px;
+  transition: 0.4s;
   &:hover {
     color: #961402;
   }
+}
+
+.black {
+  background-image: url('black.jpg');
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 6% 8px 0;
 }
