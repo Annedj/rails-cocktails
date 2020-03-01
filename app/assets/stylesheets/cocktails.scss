@@ -1,0 +1,36 @@
+// Place all the styles related to the Cocktails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.black-bg {
+  background-image: url('black.jpg');
+  background-repeat: repeat;
+  color: white;
+}
+
+.main-img {
+  height: 500px;
+}
+
+.home-header {
+  border-left: 1px solid rgba(255,255,255,0.28);
+  padding: 25px;
+  margin: 50px 0 70px 0;
+  h1 {
+    padding: 20px 0;
+    line-height: 55px;
+    font-size: 44px;
+  }
+  p {
+    text-align: justify;
+  }
+}
+
+.col-8 {
+  padding-left: 0;
+}
+
+.cocktail-bg {
+  background-image: url('glass-black.jpg');
+  background-repeat: no-repeat;
+  height: 1vh;
+}

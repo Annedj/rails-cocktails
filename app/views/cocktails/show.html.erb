@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-6">
+      <div class="card-product">
+        <%= cl_image_tag @cocktail.picture.key, width: 200 %>
+
+        <div class="card-product-infos">
+          <% if @cocktail.doses == [] %>
+            <p>Scroll down to add some ingredients!</p>
+          <% else %>
+            <h2>Ingredients</h2>
+          <% end %>
+          <% @cocktail.doses.each do |dose| %>
+            <p><strong><%= Ingredient.find(dose.ingredient_id).name %></strong> - <%= dose.description %> <%= link_to 'Remove', dose_path(dose), method: :delete %> </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 px-4 ">
+      <%= render "doses/form" %>
+    </div>
+
+  </div>
+</div>
