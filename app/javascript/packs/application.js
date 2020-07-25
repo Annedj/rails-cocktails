@@ -10,6 +10,10 @@ require("channels")
 
 import 'bootstrap';
 
+import { cocktail_form } from "../pages/index.js"
+
+cocktail_form();
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

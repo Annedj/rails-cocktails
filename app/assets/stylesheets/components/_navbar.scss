@@ -3,15 +3,15 @@
   color: white;
   padding: 5px 0;
   margin-left: 20px;
-  transition: 0.4s;
+  transition: 0.5s;
   &:hover {
     color: #961402;
+    border-bottom: 1px solid #961402;
   }
 }
 
-.black {
-  background-image: url('black.jpg');
+.navbar-links {
+  width: 80vw;
   display: flex;
-  justify-content: space-around;
-  padding: 8px 6% 8px 0;
+  justify-content: space-between;
 }

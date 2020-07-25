@@ -1,5 +1,5 @@
-<div class="black-bg">
-  <div class="container">
+<div class="black">
+  <div class="container welcome-text">
     <div class="row">
       <div class="col-8">
         <div class="home-header">
@@ -13,40 +13,54 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="cocktail-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-6">
-        <div class="home-header">
+  <div class="container make-your-own">
+    <div class="row align-items-center justify-content-center py-5">
+      <div class="col-6" id="form">
+        <div class="home-header" id="create-cocktail">
           <h2>Make your own</h2>
           <p>Fill in your ingredients and mix your own creation</p>
         </div>
       </div>
+      <div class="col-4">
+        <%= render 'new', cocktail: @new_cocktail %>
+        <%#= image_tag "cocktail.png", id: "cocktail-icon", alt: "cocktail icon" %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="wrapper">
-  <div class="container">
-    <div class="row">
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
 
-      <% @cocktails.each do |cocktail| %>
-        <div class="col-4 ">
-          <% if cocktail.picture.attached? %>
-            <div class="card-trip" style="background-image: url('<%= cl_image_path cocktail.picture.key, crop: :fill %>')">
-              <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+        <% @cocktails.each do |cocktail| %>
+          <div class="col-4 ">
+            <% if cocktail.picture.attached? %>
+              <div class="card-trip">
+                <%= cl_image_tag cocktail.picture.key, alt: cocktail.name, crop: :fill, width: 300 %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+                    <!-- <p>Short description here!</p> -->
+                  </div>
+                </div>
+              </div>
+
+            <% else %>
+            <div class="card-trip">
+              <%= image_tag 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2098&q=80', alt: cocktail.name, width: 300 %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+                  <!-- <p>Short description here!</p> -->
+                </div>
+              </div>
             </div>
-          <% else %>
-            <div class="card-trip" style="background-image: url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2098&q=80'); background-position: fill">
-              <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+            <% end %>
+          </div>
+        <% end %>
 
+      </div>
     </div>
   </div>
 </div>
