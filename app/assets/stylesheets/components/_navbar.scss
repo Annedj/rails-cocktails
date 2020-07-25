@@ -4,9 +4,18 @@
   padding: 5px 0;
   margin-left: 20px;
   transition: 0.5s;
+  a {
+    text-decoration: none;
+    color: white;
+  }
   &:hover {
-    color: #961402;
     border-bottom: 1px solid #961402;
+  }
+}
+
+.white:hover {
+  a {
+    color: #961402;
   }
 }
 
